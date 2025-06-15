@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자기이력 홈페이지</title>
+  <style type="text/css">
+
+  @font-face {
+    font-family: 'NanumSquareNeo';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.ttf) format("truetype");
+  } 
+
+  p{font-family: 'NanumSquareNeo';}
+
+  #full {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+  }
+  #screen_left {
+    width: 25%;
+    min-width: 280px;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    border-right: 1px solid #eee;
+  }
+  #screen_right {
+    width: 75%;
+    margin-left: 25%;
+    padding: 20px;
+  }
+  .profile-section {
+    text-align: center;
+  }
+
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  }
+
+  .fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .name-text {
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  .name-text:hover {
+    color: #7F8CAA;
+  }
+  </style>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('.fade-in-section');
+    
+    let observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const nameText = document.getElementById('name');
+    let isKorean = true;
+
+    nameText.addEventListener('click', function() {
+      if (isKorean) {
+        nameText.textContent = 'KEUM DAHYUN';
+      } else {
+        nameText.textContent = '금다현';
+      }
+      isKorean = !isKorean;
+    });
+  });
+  </script>
+</head>
+
+<body>
+  <div id="full">
+    <div id="screen_left">
+        <div class="profile-section">
+        <div>
+          <div>
+            <img src="img/me.PNG" alt="profile-img" style="width: 150px; height: 150px; border-radius: 50%; margin-top: 50px;">
+          </div>
+        </div>
+        <p id="name" class="name-text" style="font-size: 25px;"> 
+          금다현
+        </p>
+        <p style="font-size: 12px;"> 
+          Front-end developer aspirant
+          <br>  South Korea, Deajeon 
+          <br>
+          <br>
+        </p>
+        </div>
+        <p style="font-size: 14px; margin-left: 70px; margin-top:60px;"> 
+            ✉️ DM : <a href="https://www.instagram.com/rln9_4/" style="color:#7F8CAA">INSTAGRAM</a><br/><br/>
+          </p>
+          <p style="font-size: 14px; margin-left: 70px; line-height:25px">
+            Phone Number : 010-3784-4288 <br/>
+            Address : 대전광역시 서구 관저동 <br/>
+            E-mail : keumm94@gmail.com <br/> <br/>
+            Github : <a href="https://github.com/keumm94" style="color:#7F8CAA"> click here! </a><br/>
+          </p>
+    </div>    <div id="screen_right">
+      <div class="fade-in-section">
+        <p style="font-size: 25px; margin-left: 20px; margin-top: 50px; font-family: 'NanumSquareNeo';">
+          소 개 <hr style="margin-right: 150px; border: 0; border-top: 1px solid #ddd;">
+        </p>
+        <p style="line-height:35px; margin-left: 20px; margin-top: 10px; font-family: 'NanumSquareNeo';">
+          사용자의 시선을 끌어당기고 마음을 움직이는 디자인, <br/> 
+          그리고 직관적인 인터페이스를 통해 더 나은 웹 경험을 만드는
+          프론트엔드 개발자이자 웹디자이너를 꿈꾸고 있습니다. <br/> <br/>
+          미적인 감각과 기술적 구현 사이의 조화를 추구하며,
+          누구나 쉽게 공감하고 사용할 수 있는 웹을 디자인하고자 합니다.      </p>
+      </div>
+
+      <br/>
+
+      <div class="fade-in-section">
+        <p style="font-size: 25px; margin-left: 20px; margin-top: 50px; font-family: 'NanumSquareNeo';">
+          스 킬 <hr style="margin-right: 150px; border: 0; border-top: 1px solid #ddd;">
+        </p>
+        <p style="line-height:35px; margin-left: 20px; margin-top: 10px; font-family: 'NanumSquareNeo';">
+          JavaScript / Html / C / Python / Markdown <br/> 
+      </p>
+
+      <br/>
+
+      <div class="fade-in-section">
+        <p style="font-size: 25px; margin-left: 20px; margin-top: 50px; font-family: 'NanumSquareNeo';">        희 망 직 무 <hr style="margin-right: 150px; border: 0; border-top: 1px solid #ddd;"> </hr>
+      </p>
+      <p style="line-height:35px; margin-left: 20px; margin-top: 10px; font-family: 'NanumSquareNeo';">
+        프론트엔드 개발자 / 웹디자이너 <br/> 
+        사용자 경험 중심의 프론트엔드 개발 및 웹디자인 <br/> 
+        UI/UX에 강점을 가진 프론트엔드 개발자 <br/> 
+      </p>
+
+      <br/>
+
+      <div class="fade-in-section">
+        <p style="font-size: 25px; margin-left: 20px; margin-top: 50px; font-family: 'NanumSquareNeo';">        프 로 젝 트 <hr style="margin-right: 150px; border: 0; border-top: 1px solid #ddd;"> </hr>
+      </p>
+      <p style="line-height:35px; margin-left: 20px; margin-top: 10px; font-family: 'NanumSquareNeo';">
+        Cat & Soup - 학사 과정 중 과제 <br/> 
+        Play Potal (예정) - 학사 과정 중 과제 <br/> 
+        ON:space (예정) - 웹사이트 제작 <br/> 
+        666 company (예정) - 온라인 게임 회사 홈페이지 제작 <br/>  
+        BloomUI (예정) - 사용자 인터페이스 제작 <br/> 
+      </p>
+
+      <br/>
+
+      <div class="fade-in-section">
+        <p style="font-size: 25px; margin-left: 20px; margin-top: 50px; font-family: 'NanumSquareNeo';">        학 력 <hr style="margin-right: 150px; border: 0; border-top: 1px solid #ddd;"> </hr>
+      </p>
+      <p style="line-height:35px; margin-left: 20px; margin-top: 10px; font-family: 'NanumSquareNeo';">
+        한남대학교 컴퓨터공학과 학사 과정 중 (2025.03 ~) <br/>
+      </p>
+
+    </div>
+  </div>
+
+
+
+  
+</body>
+</html>
